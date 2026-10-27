@@ -8,20 +8,23 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'melanate', title: 'Melanate / Sankofa', subtitle: 'Making room for meaningful stories.',
-    description: 'A nonprofit digital experience built around content, community, and thoughtful storytelling.',
+    description: 'Designing a nonprofit website and Sankofa storytelling experience with the Develop for Good team.',
     category: 'DESIGN FOR GOOD', tags: ['UI/UX design', 'Visual storytelling', 'Nonprofit'], color: 'rose',
-    role: 'Volunteer UI/UX Designer · Sankofa Subsite Lead', period: 'May–August 2026', tools: 'Figma, Wix Harmony, CMS', type: 'Nonprofit website · Develop for Good',
-    overview: 'Through Develop for Good, I worked with a team on a website for Melanate. I led design for the Sankofa subsite and contributed to the main homepage, helping shape a digital home for the organization’s content.',
-    challenge: 'How can a nonprofit’s content become an engaging, easy-to-follow digital experience? This project brought together information organization, page design, and visual storytelling. Specific client requirements and discovery materials will be added with the original project artifacts.',
-    goals: ['Give structured content a clear, readable hierarchy.', 'Create space for stories through thoughtful layouts and timeline cards.', 'Translate design intent into an editable CMS-supported website.'],
+    role: 'Volunteer Designer · Sankofa Subsite Lead', period: 'May–August 2026', tools: 'Figma, Wix Harmony, CMS', type: 'Nonprofit website · Develop for Good',
+    live: 'https://www.melanate.org',
+    overview: 'Melanate supports Black women and gender-expansive professionals in philanthropy, cultivating restoration, equity, and leadership among those shaping how money moves in the South. Through Develop for Good, our team helped create a visually refreshed, strategically organized website with clearer educational pathways and interactive experiences for Sankofa. I led design for the Sankofa subsite and contributed to the main homepage.',
+    challenge: 'Communicate Melanate’s mission and educational content through a cohesive website, while giving Sankofa room for interactive storytelling. The work connected page layouts, content organization, and implementation in Wix Harmony, with feedback from the nonprofit client throughout the process.',
+    goals: ['Make Melanate’s mission and educational content easier to navigate.', 'Create an engaging Sankofa experience through timeline cards and visual storytelling.', 'Organize structured content for CMS integration and translate designs into Wix Harmony.'],
     process: [
-      {title: '01 · Understand & organize', text: 'I collaborated with teammates and incorporated client feedback while organizing structured content for CMS integration. Discovery notes and the original content map are pending.'},
-      {title: '02 · Explore the story', text: 'I created wireframes and page layouts for the Sankofa subsite and contributed to the main homepage. Original wireframes and design iterations will be added here.'},
-      {title: '03 · Refine together', text: 'My work included timeline cards, visual storytelling, and animations. Client feedback and team collaboration informed the design work; annotated examples are pending.'},
-      {title: '04 · Bring it to life', text: 'I helped translate designs into Wix Harmony and participated in the final project presentation and Demo Day.'}
+      {title: '01 · Wireframing & exploration', text: 'I created wireframes and page layouts to explore how content could be presented across the Sankofa subsite and main homepage. Original Figma artifacts will be added to show the work directly.'},
+      {title: '02 · Leading the Sankofa design', text: 'As Sankofa subsite lead, I led its design work, including page layouts, timeline cards, and interactive storytelling elements. My focus was the subsite within the broader team website project.'},
+      {title: '03 · Homepage contributions', text: 'Alongside my Sankofa responsibilities, I contributed to the main homepage’s design and visual presentation. The homepage was a shared team effort; I do not claim sole authorship.'},
+      {title: '04 · Storytelling & CMS structure', text: 'I organized content for CMS integration and worked on timeline cards, animation, and visual storytelling. This brought content structure and presentation into the same design process.'},
+      {title: '05 · Client collaboration & iteration', text: 'I collaborated with designers, developers, and the nonprofit client, incorporating feedback into design iterations. Original annotated iterations will be added when available.'},
+      {title: '06 · From Figma to Wix Harmony', text: 'I helped translate designs into Wix Harmony and participated in the final project presentation and Demo Day. The completed website reflects the combined work of the design and development team.'}
     ],
-    solution: 'The website work brought page layouts, structured content, timeline cards, and motion together. The original site screenshots and interaction recordings will document the final implementation here.',
-    reflection: 'Designing for a real organization made collaboration and clear communication central to the work. This project connected design decisions with content management and implementation. A more personal reflection, with specific examples, will be added alongside the artifacts.'
+    solution: 'The team’s website refresh brings Melanate’s mission, educational pathways, and Sankofa experience together. My contributions centered on the Sankofa subsite, homepage design, structured content, and interactive storytelling. Explore the official website below; original wireframes and annotated design iterations remain to be added.',
+    reflection: 'This project connected design ownership with close collaboration. Leading the Sankofa subsite meant keeping page layouts, storytelling, and CMS content in conversation, while contributing to a larger website. Working with the nonprofit client reinforced the value of clear communication, incorporating feedback, and carrying design intent into implementation.'
   },
   {
     slug: 'kneeguard', image: '/projects/kneeguard/desktop.png', imageAlt: 'KneeGuard interface showing recovery week and day selectors, knee flexion, a recovery milestone, and progress status', title: 'KneeGuard', subtitle: 'Clarity through every step of recovery.',
@@ -72,13 +75,13 @@ export const projects: Project[] = [
       {title: '01 · Structure the content', text: 'The website brings organizational information and community resources into a digital space. An original sitemap and page-by-page walkthrough are pending.'},
       {title: '02 · Design for different screens', text: 'The implementation uses HTML, CSS, and Bootstrap for page structure, styling, navigation, and responsive layouts. The live homepage uses a green community-support hero, three introductory resource cards, and a community highlights carousel. The captures below show the actual desktop and mobile page.'},
       {title: '03 · Build the frontend', text: 'I independently built the website from scratch, combining custom markup and styles with Bootstrap. This work demonstrates hands-on frontend implementation alongside visual design.'},
-      {title: '04 · Share the result', text: 'The live website is linked below. A large screenshot gallery will be added with original captures; accessibility audits and measured outcomes have not been supplied.'}
+      {title: '04 · Share the result', text: 'The live website and original desktop and mobile captures are shown below. My work combined visual design with hands-on frontend implementation in HTML, CSS, and Bootstrap; no measured impact or accessibility audit results are claimed.'}
     ],
     solution: 'The result is a working website for a community-focused nonprofit. The gallery includes real desktop and mobile homepage captures. An additional resource or program page capture remains pending.',
     reflection: 'This project connects visual decisions with the practical work of building a website. Working in HTML, CSS, and Bootstrap gave me direct ownership of how the design became a functioning frontend. Specific lessons and implementation examples can be added with the original artifacts.'
   }
 ];
-export const profile = { email: '', linkedin: '', github: '', social: '', resume: '', photo: '' };
+export const profile = { email: '', linkedin: 'https://www.linkedin.com/in/alyssajodijohnson', github: '', social: '', resume: '', photo: '' };
 
 export const projectGalleries: Record<string, {title:string;description:string;src?:string;alt:string}[]> = {
  'kneeguard': [
@@ -96,4 +99,20 @@ export const projectGalleries: Record<string, {title:string;description:string;s
   {title:'Resources or program page',description:'Add an original capture of a resource or program page.',alt:'Our Neighborhood Mission resource page capture pending'},
   {title:'Homepage · mobile',description:'',src:'/projects/our-neighborhood-mission/mobile.png',alt:'Our Neighborhood Mission homepage at a mobile viewport'}
  ]
+};
+
+export const melanateRecognition = {
+  feature: 'https://developforgood.substack.com/i/214361063/nonprofit-tech-project-highlight',
+  article: 'https://developforgood.substack.com/p/develop-for-good-september-2026',
+  caseStudy: 'https://developforgood.notion.site/Melanate-Investing-and-highlighting-Black-Women-Entrepreneurs-935fbe7117c083bdab568178d5ceca0d',
+  description: "Our team's work with Melanate was featured in Develop for Good's September 2026 newsletter, highlighting the redesigned website, Sankofa experience, and our collaboration with the nonprofit.",
+  quote: 'Our experience with Develop for Good exceeded my expectations, and I would enthusiastically recommend them to any nonprofit or social impact organization looking for a thoughtful, skilled, and mission-driven partner.',
+  client: 'Josie Kalipeni',
+  clientTitle: 'Managing Director, Melanate',
+  team: [
+    { role: 'Technical Manager', names: ['Angelina Kenny'] },
+    { role: 'Developers', names: ['Oyinkansola Oyedare', 'Ryan Lawton', 'Evan Underhill'] },
+    { role: 'Designers', names: ['Isabella Agbonselobho', 'Lea Babio', 'Alyssa Johnson'] },
+    { role: 'Team Mentor', names: ['Shazia Rahman'] },
+  ],
 };

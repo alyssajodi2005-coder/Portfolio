@@ -39,7 +39,7 @@ imageAlt: 'Describe the actual content shown in the Melanate homepage capture',
 
 To fill or edit a case-study gallery, edit `projectGalleries` in `src/data/projects.ts` (or the Melanate fallback in `src/app/work/[slug]/page.tsx`), adding `src` to each appropriate gallery item, using `/projects/${project.slug}/desktop.png` (or hardware.png), details.png, and mobile.png. Replace each `alt` with a description of the actual image. Gallery items with a source open an accessible native-dialog lightbox with Escape and close-button support. Missing gallery images remain labeled placeholders. Prefer optimized PNG, WebP, or AVIF; `next/image` handles sizing and lazy loading.
 
-Melanate additionally needs original wireframes, content structure, iteration examples, and the client recognition screenshot/source URL. Replace its recognition placeholder only with verified wording; never invent a quote. Course Canvas needs specific responsibilities, actual AI flow, and award evidence. KneeGuard needs sensor/hardware details and contributions. Project dates need confirmation where marked.
+Melanate now includes the supplied official links, exact Josie Kalipeni testimonial, and team credits. It still needs original website screenshots, wireframes, content structure, iteration examples, and the newsletter feature screenshot. Edit the recognition and team data in `melanateRecognition` in `src/data/projects.ts`. Course Canvas needs specific responsibilities, actual AI flow, and award evidence. KneeGuard needs sensor/hardware details and contributions. Project dates need confirmation where marked.
 
 ## Photo, resume, and contact
 
@@ -66,3 +66,7 @@ Before submitting: replace missing assets/contact links, confirm marked facts, r
 ## Screenshot provenance
 
 The three supplied live websites were inspected during implementation. Their images in `public/projects/` were captured directly from their rendered pages; they are not reconstructed mockups. Course Canvas includes its sign-in page and the built-in demo-student dashboard. No real student data, credentials, or patient data were submitted. Captures use the cloud proxy with TLS verified by the system-trusted curl transport; the browser received the fetched resources for rendering. Some third-party resources can vary over time. Original Melanate artifacts, client recognition, hardware photographs, and unprovided personal materials remain pending.
+
+## Finalization review
+
+See [REVIEW.md](REVIEW.md) for the changes, source provenance, remaining personal assets, and review/deployment steps. The updated version must not be pushed or deployed until Alyssa approves it.
