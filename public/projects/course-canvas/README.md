@@ -1,0 +1,1 @@
+Add original desktop.png, details.png, mobile.png, and award.png here. Show the actual academic planning flow and supplied award evidence. Confirm specific contributions, timeline, stack, and AI implementation details.

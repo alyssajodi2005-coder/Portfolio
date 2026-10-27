@@ -1,0 +1,6 @@
+import { ArrowUp, ArrowUpRight, Asterisk } from 'lucide-react';
+import { profile } from '@/data/projects';
+const contacts = [{name:'Email', href:profile.email ? `mailto:${profile.email}` : ''}, {name:'LinkedIn', href:profile.linkedin}, {name:'GitHub',href:profile.github}, {name:'Social',href:profile.social}];
+export function Footer() {
+  return <footer id="contact" className="footer"><div className="footer-top"><div><p className="eyebrow">HAVE SOMETHING IN MIND?</p><h2>Good things start<br />with a <em>conversation.</em></h2><p className="footer-note">Interested in product design & software engineering opportunities.</p></div><Asterisk className="footer-flower" aria-hidden="true" strokeWidth={1}/></div><div className="footer-bottom"><p>Alyssa Johnson <span>© {new Date().getFullYear()}</span></p><div className="social-links">{contacts.map(c => c.href ? <a key={c.name} href={c.href} target={c.name === 'Email' ? undefined : '_blank'} rel="noopener noreferrer">{c.name}<ArrowUpRight size={13}/></a> : <span className="pending-link" key={c.name} title={`${c.name} link to be added`}>{c.name}<span className="sr-only"> — link coming soon</span><small>soon</small></span>)}</div><a className="back-top" href="#top" aria-label="Back to top"><ArrowUp size={18}/></a></div></footer>;
+}

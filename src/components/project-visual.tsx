@@ -1,0 +1,13 @@
+import Image from 'next/image';
+import { ArrowUpRight, Flower2, Heart, Layers3, Sparkles } from 'lucide-react';
+import type { Project } from '@/data/projects';
+export function ProjectVisual({ project, priority = false }: { project: Project; priority?: boolean }) {
+  if (project.image) return <div className={`project-visual ${project.color}`}><Image src={project.image} alt={project.imageAlt || `${project.title} project screenshot`} fill sizes="(max-width: 760px) 100vw, 70vw" priority={priority} className="project-image" /><span className="placeholder-caption">Captured from the live project · {project.slug === 'course-canvas' ? 'demo data' : 'website interface'}</span></div>;
+  return <div className={`project-visual ${project.color}`}><span className="visual-label">{project.slug === 'melanate' ? 'COMMUNITY & CULTURE' : project.slug === 'kneeguard' ? 'MOVEMENT & RECOVERY' : project.slug === 'course-canvas' ? 'LEARNING & POSSIBILITY' : 'BELONGING & CONNECTION'}</span>
+    {project.slug === 'melanate' && <div className="melanate-art"><div className="arch arch-one"/><div className="arch arch-two"/><div className="art-title">Stories that<br/><em>bring us</em><br/>together.</div><Flower2 className="art-flower" strokeWidth={.8}/><span className="art-caption">MELANATE / SANKOFA <ArrowUpRight size={16}/></span></div>}
+    {project.slug === 'kneeguard' && <div className="knee-art"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="knee-center"><Heart size={33} strokeWidth={1.2}/><span>KneeGuard</span><small>ONE STEP AT A TIME</small></div><span className="art-caption">TECHNOLOGY IN MOTION <ArrowUpRight size={16}/></span></div>}
+    {project.slug === 'course-canvas' && <div className="canvas-art"><div className="paper paper-back"/><div className="paper paper-front"><Sparkles size={28} strokeWidth={1.2}/><p>A little clarity.<br/><em>A lot of potential.</em></p><div className="paper-lines"><i/><i/><i/></div><span>COURSE CANVAS</span></div><div className="award-pill">✦ Best Demo · CUNY Tech Prep Hacks</div></div>}
+    {project.slug === 'our-neighborhood-mission' && <div className="mission-art"><div className="community-shape shape-one"/><div className="community-shape shape-two"/><div className="community-shape shape-three"/><Layers3 className="mission-icon" strokeWidth={1}/><div className="art-title">A place for<br/><em>everyone.</em></div><span className="art-caption">OUR NEIGHBORHOOD MISSION <ArrowUpRight size={16}/></span></div>}
+    <span className="placeholder-caption">Editorial cover illustration · project screenshot pending</span>
+  </div>;
+}

@@ -1,0 +1,1 @@
+Add original desktop.png, details.png, mobile.png, wireframes.png, content-map.png, iterations.png, and client-recognition.png here. Add the client post's verified wording and source link to the case study. No client quote is supplied.

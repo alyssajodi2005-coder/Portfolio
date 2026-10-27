@@ -1,0 +1,1 @@
+Add original hardware.png, details.png, and mobile.png here. Include the real knee-sleeve and Arduino setup, digital interface, and mobile interface. Confirm role, timeline, stack, and prototype details before publishing claims.
