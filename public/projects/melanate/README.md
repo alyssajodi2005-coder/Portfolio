@@ -8,4 +8,4 @@
 - iterations.png: an original design iteration with context about feedback.
 - feature.png: screenshot of the September 2026 Develop for Good Nonprofit Tech Project Highlight.
 
-The recognition text, exact Josie Kalipeni quote, official links, and team names have been supplied and implemented. A screenshot is still needed; no fictional design artifact is substituted. Add image sources to projectGalleries / the project image fields in src/data/projects.ts, and the feature image to src/components/melanate-recognition.tsx. Do not present an image as an original artifact without knowing its provenance.
+The recognition text, exact Josie Kalipeni quote, official links, and team names have been supplied and implemented. A screenshot is still needed; no fictional design artifact is substituted. Replace the editorial cover or asset notes with real image elements in work/melanate/index.html. Add the feature screenshot in that page’s recognition section. Do not present an image as an original artifact without knowing its provenance.

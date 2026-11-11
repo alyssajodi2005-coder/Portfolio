@@ -1,9 +1,12 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Portfolio development
 
-## This is NOT the Next.js you know
+This is a plain HTML/CSS portfolio with small vanilla JavaScript enhancements. Keep the homepage and four work pages as static HTML; do not add React, Next.js, a bundler, or a CSS framework unless the user explicitly requests one.
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+- Homepage: index.html. Project pages: work/*/index.html.
+- Shared presentation: assets/style.css. Popup and gallery behavior: assets/app.js.
+- About Me and Resume are native dialog popups on each page; they are not separate pages.
+- Keep project facts, the exact Melanate quote, team attribution, and existing live URLs accurate. Never invent research, metrics, screenshots, clinical validation, or personal links.
+- Node.js 18+ is sufficient; the site has zero package dependencies.
+- Use npm run dev for development, npm run build to copy deployable files to dist/, and npm start for production validation. npm run check checks JavaScript syntax. Do not edit dist/ directly.
+- Use the existing checkout; no Git worktree is needed.
+- Ask before pushing or deploying this redesign. Preserve unrelated user changes.

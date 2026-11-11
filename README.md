@@ -1,72 +1,70 @@
-# Alyssa Johnson — Design & Engineering Portfolio
+# Alyssa Johnson — Pastel Desktop Portfolio
 
-A responsive six-page portfolio built with Next.js App Router, TypeScript, Tailwind CSS v4, Motion for React, and Lucide icons. Ivory, charcoal, and muted lavender pair with editorial serif typography. Melanate uses a labeled editorial CSS illustration. The other three projects use actual captures from their supplied live URLs, including desktop and mobile views. Course Canvas captures show demo data, not measured outcomes.
+A personal product design and engineering portfolio built with **plain HTML, CSS, and a small amount of vanilla JavaScript**. There is no React, Next.js, Tailwind, TypeScript, or framework runtime. The website has no package dependencies and makes no external font or image requests.
 
-## Development
+The new design takes inspiration from the supplied desktop references: a cream grid wallpaper, pastel pink/lavender/blue/sage folders, document icons, window title bars, a small shortcut dock, and native popup windows. All four existing project case studies, their live links, real screenshots, Melanate recognition, exact testimonial, and team credits are retained.
 
-Use Node.js 20.9+ (validated with Node 24). Install the locked dependencies:
+## Pages and files
+
+- `index.html`: the single homepage with four clickable project folders.
+- `work/melanate/index.html`
+- `work/kneeguard/index.html`
+- `work/course-canvas/index.html`
+- `work/our-neighborhood-mission/index.html`
+- `assets/style.css`: all layout, pastel colors, responsive styles, folders, and window styling.
+- `assets/app.js`: About Me / Resume popup controls and image gallery lightbox.
+- `404.html`: friendly fallback for missing files.
+
+About Me and Resume are `<dialog>` popups in the HTML, not separate pages. The old `/about` and `/resume` paths redirect to their homepage popups. Each project remains a normal readable subpage, accessible through its original `/work/.../` URL. Navigation uses ordinary HTML links.
+
+## Run locally
+
+Use Node.js 18 or newer. No packages need downloading to run the site:
 
 ```sh
-npm ci
 npm run dev
 ```
 
-For cloud machines with an unwritable home cache, use `npm ci --cache /workspace/.npm-cache`. No API keys, database, or environment variables are required. The dev command uses Next.js’s supported webpack mode because the default Turbopack development compilation stalled in this cloud machine. Production builds use the standard Next.js build command.
+Then open `http://localhost:3000` on the same computer. The development server reads the source HTML/CSS directly; refresh after editing. Stop with Ctrl+C. If needed, use `npm run dev -- --port 3001`.
+
+The lockfile is retained for hosting compatibility. `npm ci` is safe and installs zero project dependencies. Cloud machines with unwritable home caches can use `npm ci --cache /workspace/.npm-cache`.
 
 ```sh
-npm run lint
-npm run typecheck
+npm run check
 npm run build
 npm start
 ```
 
-`npm start` runs the production build. The default port is 3000. Keep using this checkout; a separate Git worktree is unnecessary.
+`check` validates the small JavaScript files' syntax. `build` copies the five site pages, shared assets, 404 page, and `public/` contents into `dist/`. `start` serves that production output. No transpilation, bundling, or server rendering is needed. Do not edit `dist/` directly. Use the existing checkout rather than creating a Git worktree.
 
 ## Edit content
 
-`src/data/projects.ts` holds project descriptions, roles, tools, timelines, tags, URLs, and profile links. The homepage, cards, and case studies share it. `src/app/work/[slug]/page.tsx` holds the common case-study layout and project-specific recognition sections. `src/app/about/page.tsx` holds experience and skills.
+Edit the HTML directly. Each case study is self-contained and retains the original project facts and clearly identified missing details. `assets/style.css` uses CSS custom properties for the palette at the top. Change shared styling there.
 
-No interviews, tests, metrics, clinical validation, exact unprovided contributions, or testimonials are invented. Missing facts are visibly marked. Some reflective text is editorial framing based on supplied facts; review it in your own voice before submission.
+The About Me and Resume dialogs are present in all five HTML pages so they can open immediately, without fetching another page. To change their content, update the corresponding `<dialog id="about">` or `<dialog id="resume">` in all five files. LinkedIn is the supplied `https://www.linkedin.com/in/alyssajodijohnson`; no personal email, GitHub, Behance, Dribbble, or other URL has been invented.
 
-## Replace placeholders
+## Add your resume or photo
 
-Each folder in `public/projects/` has its own image checklist. Use original project captures, not stock or generated screenshots. Put image files there, then set `image` and a descriptive `imageAlt` on the corresponding project in `src/data/projects.ts`, for example:
+The Resume file opens a real popup with education and experience already supplied by Alyssa. It explicitly says the PDF is pending and provides no fake download button.
 
-```ts
-image: '/projects/melanate/desktop.png',
-imageAlt: 'Describe the actual content shown in the Melanate homepage capture',
-```
+When the actual PDF is available, add `public/resume.pdf` and replace the “Resume PDF not supplied yet” paragraph in the resume dialogs with a download link to `/resume.pdf`. Never substitute a fabricated resume.
 
-To fill or edit a case-study gallery, edit `projectGalleries` in `src/data/projects.ts` (or the Melanate fallback in `src/app/work/[slug]/page.tsx`), adding `src` to each appropriate gallery item, using `/projects/${project.slug}/desktop.png` (or hardware.png), details.png, and mobile.png. Replace each `alt` with a description of the actual image. Gallery items with a source open an accessible native-dialog lightbox with Escape and close-button support. Missing gallery images remain labeled placeholders. Prefer optimized PNG, WebP, or AVIF; `next/image` handles sizing and lazy loading.
+The About popup uses a decorative `aj` monogram rather than a fictional portrait. If desired, add `public/alyssa.jpg` and replace the monogram with an image of Alyssa with descriptive alt text.
 
-Melanate now includes the supplied official links, exact Josie Kalipeni testimonial, and team credits. It still needs original website screenshots, wireframes, content structure, iteration examples, and the newsletter feature screenshot. Edit the recognition and team data in `melanateRecognition` in `src/data/projects.ts`. Course Canvas needs specific responsibilities, actual AI flow, and award evidence. KneeGuard needs sensor/hardware details and contributions. Project dates need confirmation where marked.
+## Project screenshots and missing assets
 
-## Photo, resume, and contact
+Original captures are under `public/projects/`. They are referenced by ordinary `<img>` tags with dimensions, lazy loading where appropriate, and descriptive alt text. Click gallery images for an accessible lightbox; without JavaScript they still open as ordinary images.
 
-Add `public/alyssa.jpg` and `public/resume.pdf`. Set `profile.photo` to `/alyssa.jpg` and `profile.resume` to `/resume.pdf` in the data file. The About page will display the photo and download link, and navigation will point to the resume. Set `profile.email` to an email address (without `mailto:`), and `linkedin`, `github`, and `social` to full HTTPS URLs. Unset links are honest “soon” labels, not broken destinations. The resume remains unavailable until a file is supplied.
+Melanate's hero is a clearly labeled editorial illustration made in CSS, not a fake website screenshot. Replace it with a real original screenshot when supplied. Its actual website, feature screenshot, original Figma wireframes, CMS structure, and iterations are still needed; see `public/projects/melanate/README.md`.
 
-## Live projects
+KneeGuard needs original hardware photographs, exact contributions, dates, and component details. Course Canvas needs individual responsibilities, dates, and optional award evidence. Our Neighborhood Mission needs dates and an additional resource/program screenshot. The exact remaining input list is in `REVIEW.md`.
 
-- https://kneeguard-demo.onrender.com/KneedThat.html
-- https://cuny-course-canvas-5nzl.vercel.app/
-- https://ourneighborhoodmission.org
+No user interviews, impact metrics, clinical validation, or unprovided personal roles have been invented. Course Canvas's screenshots contain demo data. Melanate's testimonial and official team names remain attributed to the whole Develop for Good team.
 
-Access depends on the cloud environment network policy and the third-party hosts. No third-party site markup, claims, or imagery is required for this portfolio to build.
+## Vercel — existing project only
 
-## Accessibility & interactions
+`vercel.json` overrides the previous Next.js framework selection, runs `npm run build`, and serves `dist/` as a static website. It also preserves the old About path by redirecting it to the popup.
 
-Semantic landmarks, skip link, keyboard focus states, responsive toggle navigation with expanded state, active page indicators, smooth anchor navigation, back-to-top links, native modal galleries, and system reduced-motion support are included. Motion is limited to short entrances, route fades, and restrained hover treatments. Fonts use system sans-serif and Georgia, avoiding external font requests.
+Keep using the existing GitHub repository and Vercel project. After approval, pushing the redesign to `main` can trigger the connected deployment. Do not create another Vercel project. If the Vercel dashboard has conflicting manual overrides, use Framework Preset **Other**, Build Command `npm run build`, and Output Directory `dist` in that existing project.
 
-## Deploy on Vercel
-
-Push this project to your GitHub repository, import it in Vercel, choose Next.js, and deploy. If importing a repository where this project is at its root, leave Root Directory at the default. Use `npm run build`; Vercel detects the framework automatically. No secrets are needed. Set your custom domain in Vercel and add `metadataBase` in `src/app/layout.tsx` once you have the real production URL. The build produces static pages for all four case studies; unknown projects return 404.
-
-Before submitting: replace missing assets/contact links, confirm marked facts, review all copy, check all live links, and attach your actual resume. Deployment is not performed by local build commands.
-
-## Screenshot provenance
-
-The three supplied live websites were inspected during implementation. Their images in `public/projects/` were captured directly from their rendered pages; they are not reconstructed mockups. Course Canvas includes its sign-in page and the built-in demo-student dashboard. No real student data, credentials, or patient data were submitted. Captures use the cloud proxy with TLS verified by the system-trusted curl transport; the browser received the fetched resources for rendering. Some third-party resources can vary over time. Original Melanate artifacts, client recognition, hardware photographs, and unprovided personal materials remain pending.
-
-## Finalization review
-
-See [REVIEW.md](REVIEW.md) for the changes, source provenance, remaining personal assets, and review/deployment steps. The updated version must not be pushed or deployed until Alyssa approves it.
+Alyssa has approved pushing this redesign to the existing main branch. The connected Vercel project handles deployment; verify the latest deployment is Ready before treating the new design as live.

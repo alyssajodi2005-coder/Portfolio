@@ -1,96 +1,68 @@
-# Portfolio finalization review
+# Pastel desktop redesign — ready for review
 
-These updates extend the existing Next.js portfolio and preserve its architecture, ivory/lavender palette, typography, project order, and existing screenshots. They are prepared locally; do not push to GitHub or deploy until Alyssa approves.
+## Requested structure
 
-## Changes
+- One homepage with four project folder links, in the original order.
+- Four project subpages with all existing project information and matching pastel window styling.
+- About Me and Resume file icons open accessible native popup windows.
+- Plain HTML and CSS for structure and styling; small vanilla JavaScript for popup behavior and gallery enlargement.
 
-- Melanate remains the first project. Its case study now explains the organization’s mission, design challenge, Alyssa’s responsibilities, design goals, wireframing, Sankofa leadership, homepage contributions, interactive storytelling/CMS structure, client feedback, implementation, and reflections.
-- Team-wide accomplishments are distinguished from Alyssa’s own contributions.
-- “Featured by Develop for Good” links to the supplied official highlight and Notion case study.
-- Josie Kalipeni’s exact supplied testimonial appears in a quotation section, attributed to her and explicitly describing the entire team.
-- A native expandable Project Team section credits all supplied names and roles.
-- Melanate’s official website is linked from its card and case study.
-- Homepage and About copy focus on product design supported by engineering, using documented project examples.
-- LinkedIn is set to https://www.linkedin.com/in/alyssajodijohnson. CCNY, Computer Science, Mathematics minor, and expected graduation in 2027 are included.
-- Our Neighborhood Mission continues to describe independent HTML/CSS/Bootstrap implementation. Its stale “gallery will be added” copy has been corrected.
-- KneeGuard retains prototype-only language, without clinical outcomes or invented testing. Course Canvas retains Best Demo, supported by Alyssa’s original project information; demo counts remain labeled as demo data.
+The design has been completely replaced as requested. The former Next.js application/configuration has been removed from the working version; it remains recoverable in Git history. No new repository or hosting project was created. Dependencies and lockfile were updated to the new zero-dependency static architecture.
 
-## Facts and source provenance
+## Content preserved
 
-The new Melanate mission, personal responsibilities, team list, recognition description, and testimonial are supplied by Alyssa. The exact quote is stored once in src/data/projects.ts. The four supplied official URLs are included without changing their destinations.
+Melanate remains first, with its mission, personal responsibilities, design goals, six process stages, final-work description, exact Josie Kalipeni testimonial, official links, Develop for Good feature, and all eight team credits. Recognition continues to describe the whole team. No quote wording was changed.
 
-The existing KneeGuard, Course Canvas, and Our Neighborhood Mission URLs returned HTTP 200 during this update. Their original screenshots were previously captured from the real sites and remain unchanged. Melanate, the Substack feature/highlight, and the Notion case study could not be fetched because the cloud egress proxy returned CONNECT 403. This is an environment restriction, not evidence that those sites are down. Their domains were saved as proposed additions in environment settings, preserving existing entries. They have not been independently verified in this update; no fabricated screenshots or source-derived facts have been added.
+KneeGuard retains its hardware/software concept, visible recovery interface descriptions, prototype limitations, and real screenshots. Course Canvas retains the academic planner description, demo-data captures, and user-supplied Best Demo recognition. Our Neighborhood Mission retains independent HTML/CSS/Bootstrap development and original captures.
 
-## What Alyssa still needs to provide
+CCNY, Computer Science, Mathematics minor, expected 2027 graduation, existing experience/skills, and the supplied LinkedIn URL are retained in the popup content. The supplied reference images/videos inform the visual direction only; their people's names, photos, social accounts, characters, and unverified facts are not used as Alyssa's content.
 
-Personal:
-- A portrait photo and downloadable resume PDF.
-- Preferred contact email.
-- A personal GitHub URL and optional social URL, if these should appear. The repository owner is not automatically treated as a supplied personal profile.
-- The current Vercel deployment URL, for live-review verification and production metadata.
+## Remaining personal input and original artifacts
 
-Melanate:
-- Real desktop, mobile, and Sankofa/timeline screenshots.
-- Original Figma wireframes and design iterations, with any feedback context you want discussed.
-- Original CMS/content map if available.
-- A screenshot of the official Develop for Good feature. The testimonial, source links, and team names are already implemented.
+- Actual resume PDF. The Resume popup works, but its download is explicitly pending.
+- Optional portrait; a decorative monogram is used in its place.
+- Preferred email and any additional personal social/profile URLs, if desired. Only the supplied LinkedIn is linked.
+- Melanate: final website/Sankofa/mobile screenshots, original wireframes, CMS/content map, feedback iterations, and feature screenshot.
+- KneeGuard: role, individual contributions, dates, collaborators, original hardware/sensor photographs and specifications, and personal technical lessons.
+- Course Canvas: exact responsibilities, dates, stack/AI implementation details, collaborators, and optional award announcement/photo.
+- Our Neighborhood Mission: dates and original resource/program screenshot, with optional sitemap and personal implementation lessons.
 
-KneeGuard:
-- Your exact role, individual contributions, collaborators, and project dates.
-- Actual wearable/Arduino photographs and component/sensor details.
-- Specific technical challenges and your own reflection.
+Missing materials remain identified; no fictional screenshots, resume, user research, clinical results, or metrics are substituted. The real project images and all official outgoing URLs were preserved rather than refetched during this visual redesign.
 
-Course Canvas:
-- Your exact design/development responsibilities, collaborators, and project dates.
-- Confirmed stack and AI implementation details beyond the visible demo.
-- An award announcement/photo/source, if available. Best Demo is currently attributed to the project based on your supplied information.
+## Main changes to review
 
-Our Neighborhood Mission:
-- Project dates.
-- An original resource/program page screenshot and optional sitemap, if available.
-- Specific personal implementation lessons you want included.
+- `index.html`, `work/*/index.html`: five actual HTML pages.
+- `assets/style.css`: the complete pastel design and responsive layouts.
+- `assets/app.js`: popup and lightbox behavior, Escape, backdrop close, and focus restoration.
+- `assets/favicon.svg`: original monogram favicon.
+- `scripts/build.mjs`, `scripts/serve.mjs`: dependency-free static build/dev/production server.
+- `vercel.json`: static output settings and legacy popup redirects in the existing Vercel project.
+- `package.json`, `package-lock.json`, `.gitignore`, `AGENTS.md`, and `README.md`: updated for the plain HTML/CSS architecture.
+- Removed legacy `src/` Next.js application and framework-specific configuration; all case-study content was carried into the new HTML pages.
 
-Missing details remain clearly identified. No email, resume link, research, metrics, clinical claims, or personal role was invented. No TODO, lorem ipsum, or example destinations are used as finished content.
+## Review on your computer
 
-## Review and deployment
+Run `npm run dev` from the source folder and open localhost port 3000 on the same computer. No installation is required beyond Node.js 18+. Test each folder and the About/Resume icons. The four project pages also have matching navigation and image lightboxes.
 
-1. Use the existing checkout: `cd /workspace/Portfolio`.
-2. Run `npm run dev` to inspect locally (or `npm ci` first on another computer). Open localhost port 3000 on that same machine. The cloud onboarding UI cannot expose a live browser preview.
-3. Review `/`, `/about`, `/work/melanate`, `/work/kneeguard`, `/work/course-canvas`, and `/work/our-neighborhood-mission`, especially recognition, exact quotation, and the expandable team.
-4. Review the patch with `git diff --stat` and `git diff`; the working tree was clean before these changes.
-5. After approval, commit and push to the existing `alyssajodi2005-coder/Portfolio` main branch. Do not create a repository or Vercel project. The existing Vercel integration may deploy automatically on push; confirm its deployment result in the existing Vercel dashboard.
+The cloud development server is running for internal testing. This environment currently has no remote desktop/control tools or exposed public preview capability, so an internal localhost URL is not a public browser link.
 
-No Vercel URL or account access is present in this checkout, so no existing deployment link can be verified here. Do not infer a production hostname from the project name.
+No push or deployment is included without Alyssa's approval. The current live site will continue showing the previous version until this redesign is released.
 
-## Modified files
+## Verification completed
 
-| File | Change |
-| --- | --- |
-| src/data/projects.ts | Melanate story, official links, recognition/testimonial/team data, LinkedIn, corrected Our Neighborhood Mission copy |
-| src/app/work/[slug]/page.tsx | Responsibilities, recognition navigation, recognition component, correct website link labels |
-| src/components/melanate-recognition.tsx | New feature, exact team testimonial, compact expandable team credits |
-| src/app/globals.css | Scoped styles for recognition, testimonial, team, and mobile layouts |
-| src/app/page.tsx | Product design positioning and concrete project examples |
-| src/app/about/page.tsx | Expected 2027 graduation and evidence-based design/engineering story |
-| src/components/footer.tsx | Product design internship positioning |
-| src/components/project-card.tsx | Correct “Live website” label for Melanate |
-| public/projects/melanate/README.md | Exact missing image checklist and replacement instructions |
-| README.md | Updated content guidance and review reference |
-| REVIEW.md | Review, source limitations, remaining input, verification, and release instructions |
+- `npm ci`: passed; zero project dependencies.
+- `npm run check`: passed for the vanilla JavaScript and Node helper scripts.
+- `npm run build`: passed; production output contains the homepage, four work pages, 404, shared assets, and preserved public images.
+- Development browser checks: all five pages loaded with one h1, no horizontal overflow at 320, 390, 768, and 1440px, and all supplied project images decoded successfully.
+- About/Resume: open, close button, Escape, direct hash links, legacy About redirect, and focus restoration passed. Production checks also verified Tab stays inside the open popup.
+- Gallery enlargement, Escape-to-close, exact testimonial wording, all eight Melanate team credits, and native team disclosure passed.
+- Automated axe WCAG A/AA and WCAG 2.1 AA scans: zero violations across all five pages plus both homepage popup states, at desktop and mobile widths.
+- Production server: all five pages and real images loaded, popups worked, unknown pages returned 404, and no browser runtime errors occurred.
+- Plain HTML project navigation also worked with JavaScript disabled. The popups and gallery enhancement intentionally use the small vanilla JavaScript file.
+- Configuration JSON, dependency-free lockfile, source/output CSS equality, and `git diff --check` passed.
 
-No dependency versions, lockfile, framework configuration, project order, existing screenshots, or unrelated user changes were replaced. The build-generated next-env.d.ts change was restored to its original contents.
+No claims are made about a new public deployment. This redesign remains local and uncommitted, awaiting approval. Updated cloud startup instructions were saved to the environment draft; review/save and publish those environment settings if future tasks should use the new static workflow. Saving this draft does not deploy the website.
 
-## Verified results
+## Release approval
 
-- `npm run build`: passed; all six requested pages generated successfully.
-- `npm run lint`: passed, no lint errors or warnings.
-- `npm run typecheck`: passed.
-- Production HTTP/browser checks: all six pages returned 200, with one h1 per page; unknown project returned 404.
-- Desktop (1440px) and mobile (390px): all routes passed overflow and navigation checks, with no browser runtime errors.
-- Melanate at 320px, 768px, and 1440px: exact quotation, supplied feature/case-study destinations, all eight team names, keyboard-operated disclosure, and no horizontal overflow passed.
-- Homepage project order, anchor destinations, LinkedIn destination, and About graduation text passed.
-- Project image decoding, gallery opening, and Escape-to-close passed.
-- Automated axe WCAG A/AA and WCAG 2.1 AA scans: no violations on the six routes. This automated result does not substitute for a full manual accessibility audit.
-- KneeGuard, Course Canvas, and Our Neighborhood Mission: HTTP 200 and actual browser inspection succeeded. No patient interaction, syllabus upload, or AI parsing was performed.
-- Melanate, the official feature/highlight, Notion, and LinkedIn: external availability could not be verified because the egress proxy returned CONNECT 403. Their supplied destination URLs remain intact.
-- GitHub push and Vercel deployment: not performed, per Alyssa’s explicit instruction. The local working changes are ready for approval and remain uncommitted.
+Alyssa approved pushing the completed pastel redesign. The changes are prepared for the existing main branch and connected Vercel project. Deployment completion still requires verification; the local checks above do not establish that Vercel has finished publishing. Earlier notes about awaiting approval describe the pre-release review state.
