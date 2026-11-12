@@ -2588,3 +2588,46 @@ dialog[open] {
     font-size: 10px;
   }
 }
+
+/* Supplied resume and GitHub profile. */
+.github-icon {
+  background: #e3d9ed;
+  color: #695271;
+}
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.resume-dialog {
+  width: min(860px, calc(100% - 32px));
+}
+.resume-actions {
+  margin: 22px 0;
+}
+.resume-preview {
+  display: block;
+  width: 100%;
+  height: 65svh;
+  min-height: 300px;
+  border: 1px solid #d3c3cb;
+  border-radius: 5px;
+  background: #fffaf3;
+}
+.resume-preview > p {
+  padding: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+@media (max-width: 760px) {
+  .resume-dialog {
+    width: calc(100% - 24px);
+  }
+  .resume-preview {
+    height: 55svh;
+  }
+  .resume-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

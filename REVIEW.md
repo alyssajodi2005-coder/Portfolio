@@ -19,9 +19,9 @@ CCNY, Computer Science, Mathematics minor, expected 2027 graduation, existing ex
 
 ## Remaining personal input and original artifacts
 
-- Actual resume PDF. The Resume popup works, but its download is explicitly pending.
+- Resume PDF supplied and installed at public/resume.pdf; preview, open, and download controls are implemented.
 - Optional portrait; a decorative monogram is used in its place.
-- Preferred email and any additional personal social/profile URLs, if desired. Only the supplied LinkedIn is linked.
+- Preferred email or any additional social/profile URLs, if desired. Both supplied LinkedIn and GitHub profiles are linked.
 - Melanate: final website/Sankofa/mobile screenshots, original wireframes, CMS/content map, feedback iterations, and feature screenshot.
 - KneeGuard: role, individual contributions, dates, collaborators, original hardware/sensor photographs and specifications, and personal technical lessons.
 - Course Canvas: exact responsibilities, dates, stack/AI implementation details, collaborators, and optional award announcement/photo.
@@ -66,3 +66,7 @@ No claims are made about a new public deployment. This redesign remains local an
 ## Release approval
 
 Alyssa approved pushing the completed pastel redesign. The changes are prepared for the existing main branch and connected Vercel project. Deployment completion still requires verification; the local checks above do not establish that Vercel has finished publishing. Earlier notes about awaiting approval describe the pre-release review state.
+
+## Resume and GitHub update
+
+The supplied Alyssa Johnson Resume.pdf is now public/resume.pdf. The Resume popup on all five pages includes its real PDF preview plus open and download links. GitHub is linked alongside LinkedIn in the homepage dock, all About popups, and all footers. No personal facts were inferred from the PDF, and no project case-study copy was changed. Alyssa approved pushing this resume and GitHub update to the existing main branch. The connected Vercel project handles deployment; completion must be verified separately.

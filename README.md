@@ -41,13 +41,11 @@ npm start
 
 Edit the HTML directly. Each case study is self-contained and retains the original project facts and clearly identified missing details. `assets/style.css` uses CSS custom properties for the palette at the top. Change shared styling there.
 
-The About Me and Resume dialogs are present in all five HTML pages so they can open immediately, without fetching another page. To change their content, update the corresponding `<dialog id="about">` or `<dialog id="resume">` in all five files. LinkedIn is the supplied `https://www.linkedin.com/in/alyssajodijohnson`; no personal email, GitHub, Behance, Dribbble, or other URL has been invented.
+The About Me and Resume dialogs are present in all five HTML pages so they can open immediately, without fetching another page. To change their content, update the corresponding `<dialog id="about">` or `<dialog id="resume">` in all five files. LinkedIn and GitHub use Alyssa’s supplied profiles: `https://www.linkedin.com/in/alyssajodijohnson` and `https://github.com/alyssajodi2005-coder`. No other personal contact links have been invented.
 
 ## Add your resume or photo
 
-The Resume file opens a real popup with education and experience already supplied by Alyssa. It explicitly says the PDF is pending and provides no fake download button.
-
-When the actual PDF is available, add `public/resume.pdf` and replace the “Resume PDF not supplied yet” paragraph in the resume dialogs with a download link to `/resume.pdf`. Never substitute a fabricated resume.
+The Resume file opens a popup with an embedded preview of the supplied PDF, an “Open resume PDF” link, and a “Download resume” button. The actual file is `public/resume.pdf` and is served at `/resume.pdf`. Replace that file to update the resume; no HTML link changes are needed. Open/download links also work in browsers that cannot show the inline PDF preview.
 
 The About popup uses a decorative `aj` monogram rather than a fictional portrait. If desired, add `public/alyssa.jpg` and replace the monogram with an image of Alyssa with descriptive alt text.
 
